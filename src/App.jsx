@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, RouterProvider } from 'react-router-dom';
+import router from './routes';
 import styled from 'styled-components';
 import NavbarMenu from './components/navbar';
+import TypingAnimation from './utils/Animations';
 import './App.css';
 
 const MainContainer = styled.div`
@@ -41,33 +44,8 @@ const App = () => {
 
   const title = 'Andrés Rubio';
 
-  const TypingAnimation = ({ text, delay }) => {
-    const [displayText, setDisplayText] = useState('');
-
-    useEffect(() => {
-      let currentIndex = 0;
-      const intervalId = setInterval(() => {
-        if (currentIndex < title.length) {
-          setDisplayText((prevText) => {
-            console.log(currentIndex);
-            console.log(prevText);
-            return prevText + title[currentIndex];
-          });
-          currentIndex = currentIndex + 1;
-        } else {
-          console.log('aca');
-          clearInterval(intervalId);
-        }
-      }, delay);
-
-      return () => clearInterval(intervalId);
-    }, [text, delay]);
-
-    return displayText;
-  };
-
   return (
-    <MainContainer scrolled={false}>
+    <MainContainer>
       <Header>
         <h1>
           <TypingAnimation text={title} delay={100} />
@@ -75,6 +53,7 @@ const App = () => {
         </h1>
         <NavbarMenu />
       </Header>
+      <RouterProvider router={router} />
     </MainContainer>
   );
 };
