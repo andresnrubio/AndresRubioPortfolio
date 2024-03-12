@@ -1,8 +1,5 @@
 #root {
-  max-width: 1200px;
   width: 100dvw;
-  margin: 0 auto;
-  padding: 0;
   text-align: center;
-  box-sizing: border-box;
+  margin: 0 auto;
 }

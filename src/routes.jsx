@@ -1,11 +1,14 @@
-import { createBrowserRouter, createRoutesFromElements, Route, Outlet } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import Hero from './components/Title';
+import App from './App';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Outlet />}>
-      <Route path="home" element={<h1>Hola</h1>} />
-      <Route path="home2" element={<h1>Hola2</h1>} />
-      <Route path="home3" element={<h1>Hola3</h1>} />
+    <Route path="/" element={<App />}>
+      <Route path="home" element={<Hero />} />
+      <Route path="projects" element={<h1>projects</h1>} />
+      <Route path="about" element={<h1>sobre mi</h1>} />
+      <Route path="contact" element={<h1>contacto</h1>} />
     </Route>
   )
 );

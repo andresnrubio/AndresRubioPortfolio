@@ -1,10 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const buttonDeafult = 'none';
+const buttonDefault = 'none';
 
 const Navbar = styled.nav`
-  background-color: ${(props) => props.color || buttonDeafult};
+  background-color: ${(props) => props.color || buttonDefault};
   ul {
     all: unset;
     display: flex;
@@ -15,8 +15,6 @@ const Navbar = styled.nav`
     list-style: none;
   }
   a {
-    width: fit-content;
-    color: white;
     div {
       width: 0%;
       height: 3px;
@@ -44,28 +42,22 @@ const NavbarMenu = () => {
     <Navbar $principal>
       <ul>
         <li>
-          <a href="">
-            Inicio
+          <Link to={'/projects'}>
+            Proyectos
             <div />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="">
-            Mis proyectos
-            <div />
-          </a>
-        </li>
-        <li>
-          <a href="">
+          <Link to={'/about'}>
             Sobre mi
             <div />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="">
+          <Link to={'/contact'}>
             Contacto
             <div />
-          </a>
+          </Link>
         </li>
       </ul>
     </Navbar>
