@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import TypingAnimation from '../utils/Animations';
-
-const HeroTitle = styled.span`
-  display: block;
-  grid-template-columns: 100px 1fr;
-  gap: 1rem;
-`;
-
 const Title = () => {
   const [title, setTitle] = useState('Andrés Rubio');
   const [index, setIndex] = useState(0);
@@ -29,9 +22,9 @@ const Title = () => {
   }, [index]);
 
   return (
-    <>
+    <Link to="/">
       Hi! My name is <TypingAnimation text={title} delay={100} />
-    </>
+    </Link>
   );
 };
 

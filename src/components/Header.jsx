@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import NavbarMenu from './Navbar';
+
 import Title from './Title';
 import { useTheme } from '../hooks/ThemeProvider';
 import dayAndNightLight from '../assets/dayAndNight_light.png';
 import dayAndNightDark from '../assets/dayAndNight_dark.png';
+import NavbarMenu from './navbar';
 
 const Header = styled.header`
   background-color: var(--text-box-color);
@@ -47,18 +48,10 @@ const HeaderMenu = () => {
     <Header>
       <div className="container">
         <h2>
-          {/* <TypingAnimation text={title} delay={100} /> */}
           <Title />
           <span>_</span>
         </h2>
         <NavbarMenu />
-        {/* <button primary="True" onClick={toggleTheme}>
-          {isDarkTheme ? (
-            <img src={dayAndNightDark} alt="☀️" />
-          ) : (
-            <img src={dayAndNightLight} alt="🌙" />
-          )}
-        </button> */}
       </div>
     </Header>
   );
