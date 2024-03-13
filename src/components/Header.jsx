@@ -8,16 +8,21 @@ import dayAndNightDark from '../assets/dayAndNight_dark.png';
 import NavbarMenu from './navbar';
 
 const Header = styled.header`
-  background-color: var(--text-box-color);
-
+  width: 100%;
+  position: fixed;
+  background-color: var(--text-box-color-33);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   .container {
+    height: 50px;
     display: grid;
-    grid-template-columns: 400px minmax(100px, auto) 150px;
+    grid-template-columns: minmax(180px, 250px) minmax(100px, auto) 150px;
     align-items: center;
+    justify-items: start;
     padding: 0 2rem;
     margin: 0 auto;
     max-width: 900px;
-    h2 {
+    h1 {
       font-size: 1.2rem;
       span {
         animation: blink-animation 1s steps(4, start) infinite;
@@ -34,10 +39,15 @@ const Header = styled.header`
         }
       }
     }
+    button {
+      all: unset;
+      place-self: center end;
+      display: flex;
+    }
+    button :hover {
+      opacity: 0.5;
+    }
   }
-  /* button {
-    all: unset;
-  } */
 `;
 
 const HeaderMenu = () => {
@@ -47,11 +57,18 @@ const HeaderMenu = () => {
   return (
     <Header>
       <div className="container">
-        <h2>
+        <h1>
           <Title />
           <span>_</span>
-        </h2>
+        </h1>
         <NavbarMenu />
+        <button onClick={toggleTheme}>
+          {isDarkTheme ? (
+            <img src={dayAndNightDark} alt="" />
+          ) : (
+            <img src={dayAndNightLight} alt="" />
+          )}
+        </button>
       </div>
     </Header>
   );

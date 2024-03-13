@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TypingAnimation from '../utils/Animations';
+
 const Title = () => {
   const [title, setTitle] = useState('Andrés Rubio');
   const [index, setIndex] = useState(0);
@@ -23,7 +24,8 @@ const Title = () => {
 
   return (
     <Link to="/">
-      Hi! My name is <TypingAnimation text={title} delay={100} />
+      Andres N. Rubio
+      {/* Hi! My name is <TypingAnimation text={title} delay={100} /> */}
     </Link>
   );
 };

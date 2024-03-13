@@ -13,13 +13,14 @@ const Navbar = styled.nav`
   }
   ul li {
     list-style: none;
+    margin-top: 6px;
   }
   a {
     div {
       width: 0%;
       height: 3px;
       padding: 1px 0;
-      background-color: white;
+      background-color: var(--text-color);
     }
     &:hover {
       div {
@@ -31,7 +32,7 @@ const Navbar = styled.nav`
       div {
         width: 100%;
         height: 3px;
-        background-color: white;
+        background-color: var(--text-color);
       }
     }
   }
