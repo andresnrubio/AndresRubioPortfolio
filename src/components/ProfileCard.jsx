@@ -5,7 +5,7 @@ import profilePicture from '../assets/profile.jpg';
 const ProfileCard = styled.div`
   width: 95%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 20px;
   /* background: var(--text-box-color-33); */
   display: flex;
@@ -18,7 +18,7 @@ const ProfileCard = styled.div`
       letter-spacing: 2px;
       line-height: 2rem;
     }
-    h4 {
+    p {
       letter-spacing: 1px;
     }
   }
