@@ -1,10 +1,4 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  Routes,
-  Navigate
-} from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import App from './App';

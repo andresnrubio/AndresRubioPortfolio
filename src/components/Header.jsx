@@ -8,6 +8,7 @@ import dayAndNightLight from '../assets/dayAndNight_light.png';
 import dayAndNightDark from '../assets/dayAndNight_dark.png';
 import NavbarMenu from './navbar';
 import HamburguerMenu from './HamburguerMenu';
+import SideBar from './Sidebar';
 
 const Header = styled.header`
   width: 100%;
@@ -23,7 +24,6 @@ const Header = styled.header`
     align-items: center;
     justify-items: start;
     justify-content: ${(props) => (props.mobile ? 'space-between' : '')};
-    /* padding: 0 2rem; */
     padding-left: 2rem;
     margin: 0 auto;
     max-width: 900px;
@@ -58,35 +58,12 @@ const Header = styled.header`
 
 const MenuContainer = styled.div`
   background-color: ${(props) => (props.isOpen ? 'var(--background-color)' : 'none')};
-  /* width: 150px; */
-  /* display: ${(props) => (props.isOpen ? 'block' : 'none')}; */
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   position: relative;
   z-index: 2;
   align-self: flex-start;
-  /* margin-top: 50px; */
-  /* margin-left: 50%; */
-`;
-
-const MenuItem = styled.div`
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-`;
-
-const SideBar = styled.div`
-  width: 100vw;
-  max-width: 300px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: var(--text-box-color-33);
-  align-self: start;
-  padding: 1rem;
-  position: relative;
 `;
 
 const HeaderMenu = () => {

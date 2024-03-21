@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import HamburguerMenu from './HamburguerMenu';
-import { useEffect } from 'react';
 
 const buttonDefault = 'none';
 
@@ -16,7 +14,6 @@ const Navbar = styled.nav`
     flex-direction: ${(props) => (props.$mobile ? 'column' : 'row')};
     gap: ${(props) => (props.$mobile ? '1rem' : '2rem')};
     align-items: flex-end;
-    /* grid-template-columns: repeat(4); */
   }
   ul li {
     list-style: none;
@@ -39,14 +36,6 @@ const Navbar = styled.nav`
         width: 100%;
       }
     }
-    /* ${(props) =>
-      props.active
-        ? `div {
-        width: 100%;
-        height: 3px;
-        background-color: var(--text-color);
-      }`
-        : ''} */
     ${({ active }) =>
       active === 'true' &&
       css`
@@ -55,13 +44,7 @@ const Navbar = styled.nav`
           height: 3px;
           background-color: var(--text-color);
         }
-      `}/* &:active {
-      div {
-        width: 100%;
-        height: 3px;
-        background-color: var(--text-color);
-      }
-    } */
+      `}
   }
 `;
 

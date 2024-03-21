@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProfileCard from './ProfileCard';
+import Technologies from './Technologies';
 
 const HomeContainer = styled.div`
   padding: 1rem;
@@ -36,6 +37,7 @@ const Home = () => {
         ¿Necesitas alguien para colaborar en tu próximo proyecto o tienes alguna consulta? ¡No dudes
         en contactarme! ¡Conectemos y hagamos realidad tus ideas!
       </p>
+      <Technologies />
     </HomeContainer>
   );
 };

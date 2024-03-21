@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    /* Define tus variables CSS aquí */
     --background-color: ${({ theme }) => theme.body};
     --text-color: ${({ theme }) => theme.text};
     --text-color-underline: ${({ theme }) => theme.text_underline};
@@ -12,9 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     --button-primary:#6399CB;
     --button-secondary: #C45C55;
     --picture-filter:  ${({ theme }) => theme.picture_filter};
-    /* --primary-color: #007bff;
-    --secondary-color: #6c757d;
-     */
   }
 
   body {

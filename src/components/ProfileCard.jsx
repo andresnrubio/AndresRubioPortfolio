@@ -7,7 +7,6 @@ const ProfileCard = styled.div`
   margin: 0 auto;
   padding: 1rem 0;
   border-radius: 20px;
-  /* background: var(--text-box-color-33); */
   display: flex;
   align-items: center;
 
