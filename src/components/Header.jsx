@@ -15,14 +15,16 @@ const Header = styled.header`
   background-color: var(--text-box-color-33);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
   .container {
-    height: 50px;
+    height: 48px;
     display: ${(props) => (props.mobile ? 'flex' : 'grid')};
-    grid-template-columns: minmax(180px, 250px) minmax(100px, auto) 150px;
+    grid-template-columns: minmax(180px, 250px) minmax(100px, auto) 300px;
     align-items: center;
     justify-items: start;
     justify-content: ${(props) => (props.mobile ? 'space-between' : '')};
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
+    padding-left: 2rem;
     margin: 0 auto;
     max-width: 900px;
     h1 {
@@ -44,7 +46,8 @@ const Header = styled.header`
     }
     button {
       all: unset;
-      place-self: center end;
+      place-self: ${(props) => (props.isOpen ? 'end' : 'center end')};
+      margin-right: ${(props) => (props.isOpen ? '1rem' : '')};
       display: flex;
     }
     button :hover {
@@ -54,15 +57,36 @@ const Header = styled.header`
 `;
 
 const MenuContainer = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  position: absolute;
-  margin-top: 150px;
+  background-color: ${(props) => (props.isOpen ? 'var(--background-color)' : 'none')};
+  /* width: 150px; */
+  /* display: ${(props) => (props.isOpen ? 'block' : 'none')}; */
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  /* margin-top: 50px; */
+  /* margin-left: 50%; */
 `;
 
 const MenuItem = styled.div`
   padding: 10px;
   background-color: #f0f0f0;
   border-bottom: 1px solid #ccc;
+`;
+
+const SideBar = styled.div`
+  width: 100vw;
+  max-width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: var(--text-box-color-33);
+  align-self: start;
+  padding: 1rem;
+  position: relative;
 `;
 
 const HeaderMenu = () => {
@@ -80,13 +104,11 @@ const HeaderMenu = () => {
 
   const deviceType = useDeviceType();
 
-  console.log(deviceType === 'mobile');
-
   return (
-    <Header mobile={deviceType === 'mobile'}>
+    <Header mobile={deviceType === 'mobile'} isOpen={isOpen}>
       <div className="container">
         <h1>
-          <Title />
+          {isOpen ? '' : <Title />}
           <span>_</span>
         </h1>
         {deviceType != 'mobile' ? (
@@ -103,20 +125,26 @@ const HeaderMenu = () => {
         ) : (
           <>
             <span />
-            <HamburguerMenu toggleMenu={toggleMenu} isOpen={isOpen} />
             <MenuContainer isOpen={isOpen}>
-              <NavbarMenu mobile closeOnClick={handleItemClick} />
-              <button
-                onClick={() => {
-                  toggleTheme();
-                  handleItemClick();
-                }}>
-                {isDarkTheme ? (
-                  <img src={dayAndNightDark} alt="" />
-                ) : (
-                  <img src={dayAndNightLight} alt="" />
-                )}
-              </button>
+              <HamburguerMenu toggleMenu={toggleMenu} isOpen={isOpen} />
+              {isOpen ? (
+                <SideBar>
+                  <NavbarMenu mobile closeOnClick={handleItemClick} />
+                  <button
+                    onClick={() => {
+                      toggleTheme();
+                      handleItemClick();
+                    }}>
+                    {isDarkTheme ? (
+                      <img src={dayAndNightDark} alt="" />
+                    ) : (
+                      <img src={dayAndNightLight} alt="" />
+                    )}
+                  </button>
+                </SideBar>
+              ) : (
+                <></>
+              )}
             </MenuContainer>
           </>
         )}

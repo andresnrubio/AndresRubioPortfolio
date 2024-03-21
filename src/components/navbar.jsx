@@ -7,17 +7,24 @@ const buttonDefault = 'none';
 
 const Navbar = styled.nav`
   background-color: ${(props) => props.color || buttonDefault};
+  margin-bottom: ${(props) => (props.$mobile ? '1rem' : '')};
+  width: ${(props) => (props.$mobile ? '100%' : 'max-content')};
+
   ul {
     all: unset;
     display: flex;
     flex-direction: ${(props) => (props.$mobile ? 'column' : 'row')};
-    gap: ${(props) => (props.$mobile ? '' : '2rem')};
+    gap: ${(props) => (props.$mobile ? '1rem' : '2rem')};
+    align-items: flex-end;
     /* grid-template-columns: repeat(4); */
   }
   ul li {
     list-style: none;
+    display: flex;
+    justify-content: flex-end;
     margin-top: 6px;
-    width: max-content;
+    width: ${(props) => (props.$mobile ? '90%' : 'max-content')};
+    border-bottom: ${(props) => (props.$mobile ? '1px solid var(--text-color-underline)' : '')};
   }
   a {
     div {

@@ -28,6 +28,7 @@ const ProfileCard = styled.div`
     border: 2px solid var(--text-color);
     transform: scaleX(-1);
     filter: var(--picture-filter);
+    z-index: 1;
   }
 `;
 
