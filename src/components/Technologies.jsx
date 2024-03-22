@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
-const Logo = styled.i`
-  color: var(--text-color);
-  font-size: 3.5rem;
-`;
+import DeviconLogo from './DeviconLogo';
 
 const TechnologiesSection = styled.section`
   max-width: 350px;
@@ -29,7 +25,7 @@ const Technologies = () => {
   return (
     <TechnologiesSection>
       {[...Array(11)].map((_, index) => (
-        <Logo
+        <DeviconLogo
           key={index}
           className={`devicon-${icons[index]} ${hoveredLogo === index ? 'colored' : ''}`}
           hovered={hoveredLogo === index}
@@ -50,9 +46,6 @@ const icons = [
   'nodejs-plain-wordmark',
   'express-original',
   'python-plain'
-  // 'angularjs-plain'
-  // 'django-plain',
-  // 'mongodb-plain'
 ];
 
 export default Technologies;
