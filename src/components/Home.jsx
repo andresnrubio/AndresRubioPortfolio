@@ -4,10 +4,16 @@ import ProfileCard from './ProfileCard';
 import Technologies from './Technologies';
 import WorkHistory from './WorkHistory';
 
-const HomeContainer = styled.div`
+const HomeContainer = styled.article`
   padding: 1rem;
   p {
-    text-align: justify;
+    text-align: left;
+
+    & important {
+      color: var(--text-color-important);
+      font-weight: 600;
+      text-shadow: 1 1 var(--text-shadow);
+    }
   }
 `;
 
@@ -17,9 +23,9 @@ const Home = () => {
       <ProfileCard />
       <article>
         <p>
-          ¡Bienvenido a mi portfolio! Soy Andrés Rubio, un desarrollador full stack de Argentina,
-          apasionado por la tecnología y siempre listo para aprender sobre las últimas novedades en
-          el campo.
+          ¡Bienvenido a mi portfolio! Soy <important>Andrés Rubio</important>, un desarrollador full
+          stack de Argentina, apasionado por la tecnología y siempre listo para aprender sobre las
+          últimas novedades en el campo.
         </p>
         <br />
         <p>
@@ -40,7 +46,7 @@ const Home = () => {
           dudes en contactarme! ¡Conectemos y hagamos realidad tus ideas!
         </p>
       </article>
-      <WorkHistory />
+      {/* <WorkHistory /> */}
       <Technologies />
     </HomeContainer>
   );

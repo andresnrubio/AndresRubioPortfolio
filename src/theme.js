@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --background-color: ${({ theme }) => theme.body};
     --text-color: ${({ theme }) => theme.text};
+    --text-shadow: ${({ theme }) => theme.text_shadow};
     --text-color-underline: ${({ theme }) => theme.text_underline};
     --text-color-important: ${({ theme }) => theme.text_box_important};
     --text-box-color: ${({ theme }) => theme.text_box_color};
@@ -38,6 +39,7 @@ export const lightTheme = {
   body: '#f0e7db',
   text: '#0d0d0d',
   text_underline: '#0d0d0d30',
+  text_shadow: '#0d0d0d30',
   text_box_important: '#6399CB',
   text_box_color: '#FFFFFF',
   picture_filter: 'grayscale(0.2)'
@@ -46,6 +48,7 @@ export const darkTheme = {
   body: '#202023',
   text: '#ffffffde',
   text_underline: '#ffffff30',
+  text_shadow: '#ffffff30',
   text_box_important: '#6399CB',
   text_box_color: '#43434A',
   picture_filter: 'grayscale(0.5)'

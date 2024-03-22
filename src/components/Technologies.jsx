@@ -4,6 +4,9 @@ import styled from 'styled-components';
 const Logo = styled.i`
   color: var(--text-color);
   font-size: 3.5rem;
+  &:hover {
+    text-shadow: 0 0 10px var(--text-shadow);
+  }
 `;
 
 const TechnologiesSection = styled.section`
