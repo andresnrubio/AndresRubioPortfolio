@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProfileCard from './ProfileCard';
-import Technologies from './Technologies';
-import WorkHistory from './WorkHistory';
+import ProfileCard from '../components/ProfileCard';
+import Technologies from '../components/Technologies';
+import WorkHistory from '../components/WorkHistory';
 
 const HomeContainer = styled.article`
   padding: 1rem;

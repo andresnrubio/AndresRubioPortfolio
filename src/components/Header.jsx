@@ -24,9 +24,9 @@ const Header = styled.header`
     align-items: center;
     justify-items: start;
     justify-content: ${(props) => (props.mobile ? 'space-between' : '')};
-    padding-left: 2rem;
+    padding: ${(props) => (props.mobile ? '0 0 0 1rem' : '0 2rem 0 2rem')};
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 800px;
     h1 {
       font-size: 1.2rem;
       span {
