@@ -17,7 +17,8 @@ const LinkLine = styled.div`
   img {
     color: red;
   }
-  a {
+  a,
+  p {
     color: var(--text-color);
     font-size: 1.5rem;
     &:hover {
@@ -44,7 +45,7 @@ const AlternativeContactsWeb = () => {
       </LinkLine>
       <LinkLine>
         <Logo className="devicon-github-original" size="1.5rem" />
-        <a href="https://github.com/andresnrubio/" target="blank">
+        <a href="https://discord.user/andresnrubio/" target="blank">
           /andrew88_/
         </a>
       </LinkLine>
@@ -52,9 +53,7 @@ const AlternativeContactsWeb = () => {
         <Logo className="devicon-github-original" size="1.5rem" />
         <img src={instagram_solid} alt="ig" className="light" />
         <img src={instagram_plain} alt="ig" className="dark" />
-        <a href="https://github.com/andresnrubio/" target="blank">
-          /rr.andres/
-        </a>
+        <p>/rr.andres/</p>
       </LinkLine>
     </ContactWebLinks>
   );
