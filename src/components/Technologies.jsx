@@ -1,24 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
-
-const Logo = styled.i`
-  color: var(--text-color);
-  font-size: 3.5rem;
-  &:hover {
-    text-shadow: 0 0 10px var(--text-shadow);
-  }
-`;
-=======
 import DeviconLogo from './DeviconLogo';
->>>>>>> a134cd7ccb3e92225f1c9b78b165c463118778ef
 
 const TechnologiesSection = styled.section`
-  max-width: 350px;
+  max-width: 300px;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-evenly;
   margin: 2rem auto;
 `;
 

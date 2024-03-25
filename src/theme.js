@@ -12,6 +12,8 @@ export const GlobalStyles = createGlobalStyle`
     --button-primary:#6399CB;
     --button-secondary: #C45C55;
     --picture-filter:  ${({ theme }) => theme.picture_filter};
+    --dark-mode:  ${({ theme }) => theme.dark_mode_display};
+    --light-mode:  ${({ theme }) => theme.light_mode_display};
   }
 
   body {
@@ -36,6 +38,8 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const lightTheme = {
+  dark_mode_display: 'none',
+  light_mode_display: 'block',
   body: '#f0e7db',
   text: '#0d0d0d',
   text_underline: '#0d0d0d30',
@@ -45,6 +49,8 @@ export const lightTheme = {
   picture_filter: 'grayscale(0.2)'
 };
 export const darkTheme = {
+  dark_mode_display: 'block',
+  light_mode_display: 'none',
   body: '#202023',
   text: '#ffffffde',
   text_underline: '#ffffff30',
